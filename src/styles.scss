@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+
+    height: 60px;
+    background-color: #EFEFEF;
+    display: flex;
+
+    a {
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .logoNav {
+        width: 30%;
+
+        img {
+            margin-left: 15px;
+            height: 60px;
+        }
+    }
+
+    .tabs {
+        width: 40%;
+        margin-right: auto;
+        margin-left: auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .divBag {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        width: 30%;
+
+        .bag {
+            margin-right: 20px;
+        }
+    }
+}
