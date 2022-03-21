@@ -5,7 +5,7 @@
           box-sizing: border-box;
 }
 
-nav {
+header {
   height: 60px;
   background-color: #EFEFEF;
   display: -webkit-box;
@@ -13,36 +13,41 @@ nav {
   display: flex;
 }
 
-nav a {
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-nav .logoNav {
+header .logoNav {
   width: 30%;
 }
 
-nav .logoNav img {
+header .logoNav img {
   margin-left: 15px;
   height: 60px;
 }
 
-nav .tabs {
+header nav {
   width: 40%;
-  margin-right: auto;
-  margin-left: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav .tabs {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-nav .divBag {
+header nav .tabs a {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+header .divBag {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,7 +60,7 @@ nav .divBag {
   width: 30%;
 }
 
-nav .divBag .bag {
+header .divBag .bag {
   margin-right: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
