@@ -1,15 +1,17 @@
 import React from 'react'
+import CartWidget from './CartWidget'
 
-function NavBar() {
+function NavBar(props) {
+
     return (
         <>
             <nav>
                 <div className="tabs">
-                    <a href="#">Origen</a>
-                    <a href="#">Estilos</a>
-                    <a href="#">Marcas</a>
-                    <a href="#">Recomendadas</a>
+                    {props.sections.map((element, index) => {
+                        return <a key={index} href={element.link}>{element.tag}</a>
+                    })}
                 </div>
+                <CartWidget/>
             </nav>
         </>
     )

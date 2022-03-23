@@ -1,19 +1,36 @@
 import React from 'react'
-import logo from "../img/brewsy.PNG"
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
+import logo from '../img/brewsy.PNG'
 import NavBar from './NavBar';
 
 function Header() {
+
+    const tabs = [
+        {
+            link:"#",
+            tag:"origen"
+        },
+
+        {
+            link:"#",
+            tag:"estilos"
+        },
+        {
+            link:"#",
+            tag:"marcas"
+        },
+        {
+            link:"#",
+            tag:"recomendadas"
+        }
+    ];
+
     return (
         <>
             <header>
                 <div className="logoNav">
-                    <img src={logo} alt="Logo Brewsy" />
+                    <a href='index.html'><img src={logo} alt="Logo Brewsy" /></a>
                 </div>
-                <NavBar/>
-                <div className="divBag">
-                    <ShoppingBagOutlinedIcon fontSize="large" className="bag" />
-                </div>
+                <NavBar sections={tabs}/>
             </header>
         </>
     )
