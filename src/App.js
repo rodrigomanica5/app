@@ -7,7 +7,7 @@ function App() {
         <>
             <Header />
             <ItemListContainer greeting="Las mejores cervezas directo a tu casa"/>
-            <Footer/>
+            <Footer />
         </>
     )
 };

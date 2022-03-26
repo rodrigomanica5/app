@@ -83,4 +83,52 @@ header nav .cartWidget {
   text-transform: uppercase;
   color: #49485C;
 }
+
+.card {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+  padding: 50px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border: 1px solid #e7e9ee;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 5px 5px 5px #e7e9ee;
+          box-shadow: 2px 5px 5px 5px #e7e9ee;
+}
+
+.card .detailCard h3 {
+  margin-top: 30px;
+}
+
+.card .detailCard .controls {
+  width: 200px;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card .detailCard .controls button {
+  width: 30px;
+}
+
+.card .detailCard .checkout {
+  margin-top: 20px;
+  width: 200px;
+  height: 30px;
+}
 /*# sourceMappingURL=styles.css.map */

@@ -59,3 +59,40 @@ header {
         color: #49485C;
     }
 }
+
+.card {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #e7e9ee;
+    border-radius: 10px;
+    box-shadow: 2px 5px 5px 5px #e7e9ee;
+
+    .detailCard {
+        h3 {
+            margin-top: 30px;
+        }
+
+        .controls {
+            width: 200px;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            button {
+                width: 30px;
+            }
+        }
+
+        .checkout {
+            margin-top: 20px;
+            width: 200px;
+            height: 30px;
+        }
+    }
+}
