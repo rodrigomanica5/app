@@ -1,13 +1,30 @@
+@font-face {
+    font-family: HelveticaNow;
+    src: url(/public/fonts/HelveticaNowDisplay-ExtraBold.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+.row {
+    padding: 0;
+    margin: 0;
+}
+
+.col {
+    padding: 0;
+    margin: 0;
+}
+
 header {
     width: 100%;
     height: 75px;
-    background-color: #EFEFEF;
+    // background-color: #EFEFEF;
+    background-color: #444444;
+    // background-color: black;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -34,8 +51,10 @@ header {
             a {
                 text-transform: uppercase;
                 text-decoration: none;
-                color: #2e2c4b;
-                color: rgba(0,0,0,.5);
+                // color: #2e2c4b;
+                // color: rgba(0,0,0,.5);
+                color: white;
+                font-family: HelveticaNow;
             }
         }
 
@@ -51,48 +70,56 @@ header {
 
 .itemListContainer {
     width: 100%;
+    height: auto;
     margin-top: 50px;
 
     h1 {
         text-align: center;
         text-transform: uppercase;
-        color: #49485C;
+        color: #444;
+        font-family: HelveticaNow;
+        font-weight: 700;
+        font-size: 64px;
+    }
+
+    .loading {
+        margin-top: 30vh;
     }
 }
 
-.card {
-    width: 50%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 50px;
-    padding: 50px 0px;
-    display: flex;
-    flex-direction: row;
-    border: 1px solid #e7e9ee;
-    border-radius: 10px;
-    box-shadow: 2px 5px 5px 5px #e7e9ee;
+// .card {
+// width: 50%;
+// margin-right: auto;
+// margin-left: auto;
+// margin-top: 50px;
+// padding: 50px 0px;
+// display: flex;
+// flex-direction: row;
+// border: 1px solid #e7e9ee;
+// border-radius: 10px;
+// box-shadow: 2px 5px 5px 5px #e7e9ee;
 
-    .detailCard {
-        h3 {
-            margin-top: 30px;
-        }
+// .detailCard {
+//     h3 {
+//         margin-top: 30px;
+//     }
 
-        .controls {
-            width: 200px;
-            margin-top: 30px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+//     .controls {
+//         width: 200px;
+//         margin-top: 30px;
+//         display: flex;
+//         flex-direction: row;
+//         justify-content: space-between;
 
-            button {
-                width: 30px;
-            }
-        }
+//         button {
+//             width: 30px;
+//         }
+//     }
 
-        .checkout {
-            margin-top: 20px;
-            width: 200px;
-            height: 30px;
-        }
-    }
-}
+//     .checkout {
+//         margin-top: 20px;
+//         width: 200px;
+//         height: 30px;
+//     }
+// }
+// }

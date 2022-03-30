@@ -1,26 +1,25 @@
 import React from 'react'
-import logo from '../img/brewsy.PNG'
 import NavBar from './NavBar';
 
 function Header() {
 
     const tabs = [
         {
-            link:"#",
-            tag:"origen"
+            link: "#",
+            tag: "origen"
         },
 
         {
-            link:"#",
-            tag:"estilos"
+            link: "#",
+            tag: "estilos"
         },
         {
-            link:"#",
-            tag:"marcas"
+            link: "#",
+            tag: "marcas"
         },
         {
-            link:"#",
-            tag:"recomendadas"
+            link: "#",
+            tag: "recomendadas"
         }
     ];
 
@@ -28,9 +27,9 @@ function Header() {
         <>
             <header>
                 <div className="logoNav">
-                    <a href='index.html'><img src={logo} alt="Logo Brewsy" /></a>
+                    <a href='index.html'><img src="img/brewsy.PNG" alt="Logo Brewsy" /></a>
                 </div>
-                <NavBar sections={tabs}/>
+                <NavBar sections={tabs} />
             </header>
         </>
     )

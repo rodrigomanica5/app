@@ -1,3 +1,8 @@
+@font-face {
+  font-family: HelveticaNow;
+  src: url(/public/fonts/HelveticaNowDisplay-ExtraBold.ttf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,10 +10,20 @@
           box-sizing: border-box;
 }
 
+.row {
+  padding: 0;
+  margin: 0;
+}
+
+.col {
+  padding: 0;
+  margin: 0;
+}
+
 header {
   width: 100%;
   height: 75px;
-  background-color: #EFEFEF;
+  background-color: #444444;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -54,8 +69,8 @@ header nav .tabs {
 header nav .tabs a {
   text-transform: uppercase;
   text-decoration: none;
-  color: #2e2c4b;
-  color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-family: HelveticaNow;
 }
 
 header nav .cartWidget {
@@ -75,60 +90,20 @@ header nav .cartWidget {
 
 .itemListContainer {
   width: 100%;
+  height: auto;
   margin-top: 50px;
 }
 
 .itemListContainer h1 {
   text-align: center;
   text-transform: uppercase;
-  color: #49485C;
+  color: #444;
+  font-family: HelveticaNow;
+  font-weight: 700;
+  font-size: 64px;
 }
 
-.card {
-  width: 50%;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 50px;
-  padding: 50px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  border: 1px solid #e7e9ee;
-  border-radius: 10px;
-  -webkit-box-shadow: 2px 5px 5px 5px #e7e9ee;
-          box-shadow: 2px 5px 5px 5px #e7e9ee;
-}
-
-.card .detailCard h3 {
-  margin-top: 30px;
-}
-
-.card .detailCard .controls {
-  width: 200px;
-  margin-top: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.card .detailCard .controls button {
-  width: 30px;
-}
-
-.card .detailCard .checkout {
-  margin-top: 20px;
-  width: 200px;
-  height: 30px;
+.itemListContainer .loading {
+  margin-top: 30vh;
 }
 /*# sourceMappingURL=styles.css.map */

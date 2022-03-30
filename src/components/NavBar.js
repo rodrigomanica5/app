@@ -11,7 +11,7 @@ function NavBar(props) {
                         return <a key={index} href={element.link}>{element.tag}</a>
                     })}
                 </div>
-                <CartWidget/>
+                <CartWidget />
             </nav>
         </>
     )
