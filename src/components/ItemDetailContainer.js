@@ -5,7 +5,7 @@ import ItemDetail from './ItemDetail';
 
 function ItemDetailContainer() {
 
-    const [detail, setDetails] = useState([]);
+    const [detail, setDetails] = useState({});
 
     useEffect(() => {
         
@@ -22,7 +22,7 @@ function ItemDetailContainer() {
 
     return (
         <>
-        {(detail.length < 1 ) ? console.log("El detalle se está procesando") : <ItemDetail beerDetail={detail}/>}
+        {(Object.keys(detail).length < 1) ? console.log("El detalle se está procesando") : <ItemDetail beerDetail={detail}/>}
         </>
     )
 }

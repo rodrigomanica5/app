@@ -8,7 +8,7 @@ function ItemDetail({ beerDetail }) {
                     <img src={beerDetail.pictureURL} ></img>
                 </div>
                 <div className='col-xl-6 mt-5'>
-                    <h3> {beerDetail.name} </h3>
+                    <h3> {beerDetail.name} {beerDetail.Size} </h3>
                     <h5>{beerDetail.type} | {beerDetail.origin} </h5>
                     <h5>ABV: {beerDetail.ABV} </h5>
                     <h3 className='mt-4'>$ {beerDetail.price} </h3>
