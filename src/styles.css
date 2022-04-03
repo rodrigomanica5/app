@@ -106,4 +106,11 @@ header nav .cartWidget {
 .itemListContainer .loading {
   margin-top: 30vh;
 }
+
+.detailSection {
+  border: 1px solid #e7e9ee;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 5px 5px 5px #e7e9ee;
+          box-shadow: 2px 5px 5px 5px #e7e9ee;
+}
 /*# sourceMappingURL=styles.css.map */
