@@ -1,6 +1,9 @@
 import React from 'react'
 
 function ItemDetail({ beerDetail }) {
+
+    console.log(beerDetail.size)
+
     return (
         <>
             <div className='detailSection row col-xl-8 mx-auto my-5 py-3'>
@@ -8,12 +11,13 @@ function ItemDetail({ beerDetail }) {
                     <img src={beerDetail.pictureURL} ></img>
                 </div>
                 <div className='col-xl-6 mt-5'>
-                    <h3> {beerDetail.name} {beerDetail.Size} </h3>
+                    <h3> {beerDetail.name} {beerDetail.size} </h3>
                     <h5>{beerDetail.type} | {beerDetail.origin} </h5>
-                    <h5>ABV: {beerDetail.ABV} </h5>
+                    <h5>ABV: {beerDetail.abv} </h5>
                     <h3 className='mt-4'>$ {beerDetail.price} </h3>
-                    <p className='mt-4'> {beerDetail.Description} </p>
-
+                    {/* {(beerDetail.description)
+                        ? <p className='mt-4'> {beerDetail.description} </p>
+                        : console.log("No hay descripción")} */}
                 </div>
             </div>
         </>

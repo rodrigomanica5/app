@@ -5,7 +5,7 @@ function CartWidget() {
     return (
         <>
             <div className='cartWidget'>
-                <FiShoppingBag color="#2F363D" size="24px" strokeWidth={1}/>
+                <FiShoppingBag color="#FFFFF" size="24px" strokeWidth={1}/>
             </div>
         </>
     )

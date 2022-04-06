@@ -20,78 +20,65 @@
   margin: 0;
 }
 
-header {
-  width: 100%;
-  height: 75px;
-  background-color: #444444;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+a {
+  color: white;
 }
 
-header .logoNav {
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar {
+  height: 75px;
+  background-color: #444444;
+}
+
+.logoNav {
   width: 25%;
 }
 
-header .logoNav img {
+.logoNav img {
   margin-left: 15px;
   height: 60px;
 }
 
-header nav {
-  width: 75%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+.active {
+  color: #444444;
+  background-color: #FFFFFF;
 }
 
-header nav .tabs {
-  width: 65%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+.dropdown:hover .dropdown-menu {
+  display: block;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 0;
 }
 
-header nav .tabs a {
-  text-transform: uppercase;
-  text-decoration: none;
+.categories {
   color: white;
+  text-transform: uppercase;
   font-family: HelveticaNow;
 }
 
-header nav .cartWidget {
-  width: 35%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  padding-right: 70px;
+.categories:hover {
+  color: #C7C7C7;
+}
+
+.buscador {
+  background-color: #696969;
+  border: none;
+  font-family: HelveticaNow;
+  text-transform: uppercase;
+}
+
+.buscador:focus {
+  background-color: #696969;
 }
 
 .itemListContainer {
   width: 100%;
   height: auto;
-  margin-top: 50px;
 }
 
 .itemListContainer h1 {
@@ -101,6 +88,11 @@ header nav .cartWidget {
   font-family: HelveticaNow;
   font-weight: 700;
   font-size: 64px;
+}
+
+.itemListContainer .hero {
+  width: 100%;
+  height: 400px;
 }
 
 .itemListContainer .loading {
