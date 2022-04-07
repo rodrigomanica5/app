@@ -10,75 +10,42 @@ function ItemListContainer(props) {
 
     const { collectionName } = useParams();
 
-    console.log(collectionName)
-
     useEffect(() => {
 
-        const promise = fetch("https://mocki.io/v1/0c1c80ad-4da2-450c-865a-ba10d6d58af2");
+        const promise = fetch("https://mocki.io/v1/ca5615d9-7498-4c99-b9da-a28ec0613b04");
 
         promise.then(data => data.json())
             .then(listaProductos => {
 
-                if (collectionName == undefined) {
+                if (!collectionName) {
                     setCervezas(listaProductos)
-                } else if (collectionName == "alemania") {
-                    setCervezas(listaProductos.filter(x => x.origin == "Alemania"))
-                } else if (collectionName == "belgica") {
-                    setCervezas(listaProductos.filter(x => x.origin == "Bélgica"))
-                } else if (collectionName == "weissbier") {
-                    setCervezas(listaProductos.filter(x => x.type == "Weissbier"))
-                } else if (collectionName == "witbier") {
-                    setCervezas(listaProductos.filter(x => x.type == "Witbier"))
-                } else if (collectionName == "belgian-ale") {
-                    setCervezas(listaProductos.filter(x => x.type == "Belgian Ale"))
-                } else if (collectionName == "abbey-dubbel") {
-                    setCervezas(listaProductos.filter(x => x.type == "Abbey Dubbel"))
-                } else if (collectionName == "belgian-strong-ale") {
-                    setCervezas(listaProductos.filter(x => x.type == "Belgian Strong Ale"))
-                } else if (collectionName == "abbey-tripel") {
-                    setCervezas(listaProductos.filter(x => x.type == "Abbey Tripel"))
-                } else if (collectionName == "helles") {
-                    setCervezas(listaProductos.filter(x => x.type == "Helles"))
-                } else if (collectionName == "pils") {
-                    setCervezas(listaProductos.filter(x => x.type == "Pils"))
-                } else if (collectionName == "imperial-stout") {
-                    setCervezas(listaProductos.filter(x => x.type == "Imperial Stout"))
-                } else if (collectionName == "sour-red") {
-                    setCervezas(listaProductos.filter(x => x.type == "Sour Red"))
-                } else if (collectionName == "oktoberfest") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Oktoberfest")))
-                } else if (collectionName == "imperial-stout") {
-                    setCervezas(listaProductos.filter(x => x.type == "Imperial Stout"))
-                } else if (collectionName == "paulaner") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Paulaner")))
-                } else if (collectionName == "leffe") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Leffe")))
-                } else if (collectionName == "hoegaarden") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Hoegaarden")))
-                } else if (collectionName == "franziskaner") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Franziskaner")))
-                } else if (collectionName == "triple-karmeliet") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Triple Karmeliet")))
-                } else if (collectionName == "augustiner") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Augustiner")))
-                } else if (collectionName == "bastogne") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Bastogne")))
-                } else if (collectionName == "becks") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Becks")))
-                } else if (collectionName == "bitburger") {
-                    setCervezas(listaProductos.filter(x => x.name.includes("Bitburger")))
+                } else if ((collectionName == "alemania") || (collectionName == "belgica")) {
+                    setCervezas(listaProductos.filter(x => x.origin == collectionName))
+                } else if (
+                    (collectionName == "weissbier") || 
+                    (collectionName == "witbier") || 
+                    (collectionName == "belgian-ale") || 
+                    (collectionName == "abbey-dubbel") || 
+                    (collectionName == "belgian-strong-ale") || 
+                    (collectionName == "abbey-tripel") || 
+                    (collectionName == "helles") || 
+                    (collectionName == "pils") || 
+                    (collectionName == "imperial-stout") || 
+                    (collectionName == "sour-red") || 
+                    (collectionName == "oktoberfest") ) {
+                    setCervezas(listaProductos.filter(x => x.type == collectionName))
+                } else {
+                    setCervezas(listaProductos.filter(x => x.name.includes(collectionName)))
                 }
             })
-    }, [collectionName])
+            .catch(console.log("Error al cargar los productos"))
 
-    // else if (collectionName) {
-    //     setCervezas(listaProductos.filter(x => x.type == collectionName))
-    // }
+    }, [collectionName])
 
     return (
         <>
             <section className='itemListContainer'>
-                <img className='hero' src='./img/hero.jpg'></img>
+                <img className='hero' src='./img/hero.jpg' alt='Bienvenido a Brewsy'></img>
                 <h1>{props.greeting}</h1>
 
                 {(cervezas.length < 1)
@@ -90,12 +57,4 @@ function ItemListContainer(props) {
 }
 
 export default ItemListContainer;
-
-// const boton = document.getElementById("btn1")
-
-// boton.addEventListener("click", (e) => {
-//     e.stopPropagation
-//     console.log("boton clickeado")
-// })
-
 
