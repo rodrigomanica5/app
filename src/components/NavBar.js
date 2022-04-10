@@ -107,7 +107,7 @@ function NavBar() {
         <>
             <nav className="navbar navbar-expand-lg">
                 <div className="container-fluid">
-                    <Link className='col-xl-4' to="/"><img className='logoNav' src='./img/brewsy.png' alt='Logo de Brewsy'></img></Link>
+                    <Link className='col-xl-4' to="/"><img className='logoNav' src='/img/brewsy.png' alt='Logo de Brewsy'></img></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

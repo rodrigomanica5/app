@@ -11,7 +11,7 @@ function ItemDetailContainer() {
 
     useEffect(() => {
 
-        const promise = fetch("https://mocki.io/v1/0c1c80ad-4da2-450c-865a-ba10d6d58af2");
+        const promise = fetch("https://mocki.io/v1/b500c68f-f995-4c88-b0e0-34616b9e09d8");
 
         promise.then(data => data.json())
             .then((productDetail) => {

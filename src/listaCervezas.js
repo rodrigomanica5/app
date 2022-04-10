@@ -5,7 +5,7 @@ const productos = [
         type: "weissbier",
         price: 230,
         origin: "alemania",
-        pictureURL: "./img/products/PaulanerHefeWeissbierNaturtrub.jpg",
+        pictureURL: "/img/products/PaulanerHefeWeissbierNaturtrub.jpg",
         abv: "5.5%",
         size: "0.5l",
         description: "La cerveza blanca de levadura número 1 en alemania y una de las más apreciadas del mundo. De apariencia turbia, se presenta en el vaso con un brillante color dorado aterciopelado, bajo una robusta corona de espuma que verdaderamente merece este nombre."
@@ -16,11 +16,11 @@ const productos = [
         type: "weiss",
         price: 210,
         origin: "alemania",
-        pictureURL: "./img/products/FranziskanerWeissbier.jpg",
+        pictureURL: "/img/products/FranziskanerWeissbier.jpg",
         abv: "5%",
         size: "0.5l",
         description: ""
-        
+
     },
     {
         id: 3,
@@ -28,7 +28,7 @@ const productos = [
         type: "witbier",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/HoegaardenWit330ml.jpg",
+        pictureURL: "/img/products/HoegaardenWit330ml.jpg",
         abv: "4.9%",
         size: "0.33l",
         description: ""
@@ -39,7 +39,7 @@ const productos = [
         type: "belgian-ale",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/LeffeBlonde330ml.jpg",
+        pictureURL: "/img/products/LeffeBlonde330ml.jpg",
         abv: "6.6%",
         size: "0.33l",
         description: ""
@@ -51,7 +51,7 @@ const productos = [
         type: "abbey-dubbel",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/LeffeBrune330ml.jpg",
+        pictureURL: "/img/products/LeffeBrune330ml.jpg",
         abv: "6.5%",
         size: "0.33l",
         description: ""
@@ -63,7 +63,7 @@ const productos = [
         type: "belgian-strong-ale",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/LeffeRoyale.jpg",
+        pictureURL: "/img/products/LeffeRoyale.jpg",
         abv: "7.5%",
         size: "0.33l",
         description: ""
@@ -75,7 +75,7 @@ const productos = [
         type: "abbey-tripel",
         price: 210,
         origin: "belgica",
-        pictureURL: "./img/products/TripelKarmeliet330ml.jpg",
+        pictureURL: "/img/products/TripelKarmeliet330ml.jpg",
         abv: "8.4%",
         size: "0.33l",
         description: ""
@@ -86,7 +86,7 @@ const productos = [
         type: "helles",
         price: 180,
         origin: "alemania",
-        pictureURL: "./img/products/AugustinerLagerbierHell.jpg",
+        pictureURL: "/img/products/AugustinerLagerbierHell.jpg",
         abv: "5.2%",
         size: "0.5l",
         description: ""
@@ -97,7 +97,7 @@ const productos = [
         type: "pils",
         price: 180,
         origin: "alemania",
-        pictureURL: "./img/products/AugustinerOktoberfestBier.jpg",
+        pictureURL: "/img/products/AugustinerOktoberfestBier.jpg",
         abv: "6%",
         size: "0.5l",
         description: ""
@@ -108,7 +108,7 @@ const productos = [
         type: "belgian-ale",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/BastognePaleAle750ml.jpg",
+        pictureURL: "/img/products/BastognePaleAle750ml.jpg",
         abv: "5%",
         size: "0.75l",
         description: ""
@@ -119,7 +119,7 @@ const productos = [
         type: "pils",
         price: 180,
         origin: "alemania",
-        pictureURL: "./img/products/Becks.jpg",
+        pictureURL: "/img/products/Becks.jpg",
         abv: "4.9%",
         size: "0.33l",
         description: ""
@@ -130,7 +130,7 @@ const productos = [
         type: "pils",
         price: 180,
         origin: "alemania",
-        pictureURL: "./img/products/BitburgerStubby330ml.jpg",
+        pictureURL: "/img/products/BitburgerStubby330ml.jpg",
         abv: "4.8%",
         size: "0.33l",
         description: ""
@@ -141,7 +141,7 @@ const productos = [
         type: "imperial-stout",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/CazeauTournayRoyaleReserve.jpg",
+        pictureURL: "/img/products/CazeauTournayRoyaleReserve.jpg",
         abv: "11%",
         size: "0.75l",
         description: ""
@@ -152,7 +152,7 @@ const productos = [
         type: "abbey-dubbel",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/ChimayRed.jpg",
+        pictureURL: "/img/products/ChimayRed.jpg",
         abv: "7%",
         size: "0.33l",
         description: ""
@@ -163,7 +163,7 @@ const productos = [
         type: "belgian-strong-ale",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/ChimayBlue.jpg",
+        pictureURL: "/img/products/ChimayBlue.jpg",
         abv: "9%",
         size: "0.33l",
         description: ""
@@ -174,7 +174,7 @@ const productos = [
         type: "belgian-strong-ale",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/ChouffeLaChouffe330ml.jpg",
+        pictureURL: "/img/products/ChouffeLaChouffe330ml.jpg",
         abv: "8%",
         size: "0.33l",
         description: ""
@@ -185,7 +185,7 @@ const productos = [
         type: "pils",
         price: 180,
         origin: "alemania",
-        pictureURL: "./img/products/DABPilsener.jpg",
+        pictureURL: "/img/products/DABPilsener.jpg",
         abv: "4.8%",
         size: "0.33l",
         description: ""
@@ -196,7 +196,7 @@ const productos = [
         type: "belgian-strong-ale",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/DeliriumTremens.jpg",
+        pictureURL: "/img/products/DeliriumTremens.jpg",
         abv: "8.5%",
         size: "0.33l",
         description: ""
@@ -207,7 +207,7 @@ const productos = [
         type: "sour-red",
         price: 180,
         origin: "belgica",
-        pictureURL: "./img/products/DuchessedeBourgogne.jpg",
+        pictureURL: "/img/products/DuchessedeBourgogne.jpg",
         abv: "6.2%",
         size: "0.33l",
         description: ""
@@ -218,7 +218,7 @@ const productos = [
         type: "weissbier",
         price: 180,
         origin: "alemania",
-        pictureURL: "./img/products/ErdingerDunkelWeissbier.jpg",
+        pictureURL: "/img/products/ErdingerDunkelWeissbier.jpg",
         abv: "5%",
         size: "0.5l",
         description: ""
@@ -229,7 +229,7 @@ const productos = [
         type: "oktoberfest",
         price: 180,
         origin: "alemania",
-        pictureURL: "./img/products/ErdingerOktoberfest.jpg",
+        pictureURL: "/img/products/ErdingerOktoberfest.jpg",
         abv: "5.7%",
         size: "0.5l",
         description: ""
@@ -240,7 +240,7 @@ const productos = [
         type: "weissbier",
         price: 180,
         origin: "alemania",
-        pictureURL: "./img/products/ErdingerWeissbier.jpg",
+        pictureURL: "/img/products/ErdingerWeissbier.jpg",
         abv: "5.3%",
         size: "0.5l",
         description: ""

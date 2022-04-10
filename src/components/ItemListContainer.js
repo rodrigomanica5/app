@@ -12,8 +12,8 @@ function ItemListContainer(props) {
 
     useEffect(() => {
 
-        const promise = fetch("https://mocki.io/v1/ca5615d9-7498-4c99-b9da-a28ec0613b04");
-
+        const promise = fetch("https://mocki.io/v1/db8f8697-04d8-4279-818a-001ead101779");
+        
         promise.then(data => data.json())
             .then(listaProductos => {
 
@@ -45,7 +45,7 @@ function ItemListContainer(props) {
     return (
         <>
             <section className='itemListContainer'>
-                <img className='hero' src='./img/hero.jpg' alt='Bienvenido a Brewsy'></img>
+                <img className='hero' src='/img/hero.jpg' alt='Bienvenido a Brewsy'></img>
                 <h1>{props.greeting}</h1>
 
                 {(cervezas.length < 1)
@@ -57,4 +57,3 @@ function ItemListContainer(props) {
 }
 
 export default ItemListContainer;
-
