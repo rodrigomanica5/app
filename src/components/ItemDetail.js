@@ -1,6 +1,26 @@
 import React from 'react'
+import ItemCount from './ItemCount'
+import { useState } from 'react'
 
 function ItemDetail({ beerDetail }) {
+
+    const [quantity, setQuantity] = useState(1)
+    const [checkout, setCheckout] = useState(false)
+
+    const onAdd = () => {
+
+        setCheckout(true)
+
+        const selectedItem = {
+            img: beerDetail.pictureURL,
+            name: beerDetail.name,
+            unitPrice: beerDetail.price,
+            totalPrice: beerDetail.price * quantity,
+            quantity: quantity
+        }
+
+        console.log(selectedItem)
+    }
 
     return (
         <>
@@ -16,6 +36,8 @@ function ItemDetail({ beerDetail }) {
                     {(beerDetail.description)
                         ? <p className='mt-4'> {beerDetail.description} </p>
                         : console.log("No hay descripción")}
+
+                    <ItemCount stock={beerDetail.stock} quantity={quantity} setQuantity={setQuantity} onAdd={onAdd} checkout={checkout} />
                 </div>
             </div>
         </>
