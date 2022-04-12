@@ -1,10 +1,9 @@
-import React from 'react'
 import ItemList from './ItemList';
 import { useState, useEffect } from 'react'
 import { BounceLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom'
 
-function ItemListContainer(props) {
+function ItemListContainer() {
 
     const [cervezas, setCervezas] = useState([]);
 
@@ -19,21 +18,21 @@ function ItemListContainer(props) {
 
                 if (!collectionName) {
                     setCervezas(listaProductos)
-                } else if ((collectionName == "alemania") || (collectionName == "belgica")) {
-                    setCervezas(listaProductos.filter(x => x.origin == collectionName))
+                } else if ((collectionName === "alemania") || (collectionName === "belgica")) {
+                    setCervezas(listaProductos.filter(x => x.origin === collectionName))
                 } else if (
-                    (collectionName == "weissbier") || 
-                    (collectionName == "witbier") || 
-                    (collectionName == "belgian-ale") || 
-                    (collectionName == "abbey-dubbel") || 
-                    (collectionName == "belgian-strong-ale") || 
-                    (collectionName == "abbey-tripel") || 
-                    (collectionName == "helles") || 
-                    (collectionName == "pils") || 
-                    (collectionName == "imperial-stout") || 
-                    (collectionName == "sour-red") || 
-                    (collectionName == "oktoberfest") ) {
-                    setCervezas(listaProductos.filter(x => x.type == collectionName))
+                    (collectionName === "weissbier") || 
+                    (collectionName === "witbier") || 
+                    (collectionName === "belgian-ale") || 
+                    (collectionName === "abbey-dubbel") || 
+                    (collectionName === "belgian-strong-ale") || 
+                    (collectionName === "abbey-tripel") || 
+                    (collectionName === "helles") || 
+                    (collectionName === "pils") || 
+                    (collectionName === "imperial-stout") || 
+                    (collectionName === "sour-red") || 
+                    (collectionName === "oktoberfest") ) {
+                    setCervezas(listaProductos.filter(x => x.type === collectionName))
                 } else {
                     setCervezas(listaProductos.filter(x => x.name.includes(collectionName)))
                 }
@@ -46,7 +45,6 @@ function ItemListContainer(props) {
         <>
             <section className='itemListContainer'>
                 <img className='hero' src='/img/hero.jpg' alt='Bienvenido a Brewsy'></img>
-                <h1>{props.greeting}</h1>
 
                 {(cervezas.length < 1)
                     ? <div className='loading col-1 mx-auto'> <BounceLoader /> </div>

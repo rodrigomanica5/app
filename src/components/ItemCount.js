@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 
 function ItemCount({ stock, quantity, setQuantity, onAdd, checkout }) {
 
-
     const handleAdd = () => {
         if (quantity < stock) {
             setQuantity(quantity + 1)
@@ -20,7 +19,7 @@ function ItemCount({ stock, quantity, setQuantity, onAdd, checkout }) {
         <>
             <div className='col-xl-5 d-flex flex-column'>
                 {
-                    (checkout == true)
+                    (checkout === true)
                         ? <Link to="/cart" className='col-xl-9 mt-3 mx-auto'><button className='btn btn-success col-xl-12 mx-auto'>Checkout</button></Link>
                         : <>
                             <div className='d-flex my-3'>

@@ -1,17 +1,22 @@
-import React from 'react'
 import ItemCount from './ItemCount'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { CartContext } from '../context/MyContext'
 
 function ItemDetail({ beerDetail }) {
 
     const [quantity, setQuantity] = useState(1)
     const [checkout, setCheckout] = useState(false)
 
+    const { cart, addToCart, isInCart } = useContext(CartContext)
+
+    // console.log( isInCart(id) )
+
     const onAdd = () => {
 
         setCheckout(true)
 
         const selectedItem = {
+            id: beerDetail.id,
             img: beerDetail.pictureURL,
             name: beerDetail.name,
             unitPrice: beerDetail.price,
@@ -19,7 +24,7 @@ function ItemDetail({ beerDetail }) {
             quantity: quantity
         }
 
-        console.log(selectedItem)
+        addToCart(selectedItem)
     }
 
     return (
