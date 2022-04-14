@@ -20,7 +20,7 @@ function ItemDetailContainer() {
                     setDetails(productDetail.filter(x => x.id == productId))
                 }
             })
-            .catch(console.log("Error al cargar el detalle del producto"))
+            .catch(error => {console.log("Error al cargar el detalle del producto")})
 
     }, [])
 

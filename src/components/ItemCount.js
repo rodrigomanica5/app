@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
+import { CartContext } from '../context/CartContext'
 
 function ItemCount({ stock, quantity, setQuantity, onAdd, checkout }) {
+
+    const {emptyCart} = useContext(CartContext)
 
     const handleAdd = () => {
         if (quantity < stock) {

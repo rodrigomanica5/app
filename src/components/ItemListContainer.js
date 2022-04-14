@@ -37,7 +37,7 @@ function ItemListContainer() {
                     setCervezas(listaProductos.filter(x => x.name.includes(collectionName)))
                 }
             })
-            .catch(console.log("Error al cargar los productos"))
+            .catch(error => {console.log("Error al cargar los productos")})
 
     }, [collectionName])
 

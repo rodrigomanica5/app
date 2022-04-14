@@ -1,30 +1,19 @@
 import ItemCount from './ItemCount'
 import { useContext, useState } from 'react'
-import { CartContext } from '../context/MyContext'
+import { CartContext } from '../context/CartContext'
 
 function ItemDetail({ beerDetail }) {
 
     const [quantity, setQuantity] = useState(1)
     const [checkout, setCheckout] = useState(false)
 
-    const { cart, addToCart, isInCart } = useContext(CartContext)
-
-    // console.log( isInCart(id) )
+    const {addItem, isInCart} = useContext(CartContext)
 
     const onAdd = () => {
 
         setCheckout(true)
-
-        const selectedItem = {
-            id: beerDetail.id,
-            img: beerDetail.pictureURL,
-            name: beerDetail.name,
-            unitPrice: beerDetail.price,
-            totalPrice: beerDetail.price * quantity,
-            quantity: quantity
-        }
-
-        addToCart(selectedItem)
+        addItem(beerDetail, quantity)
+        isInCart(beerDetail.id)
     }
 
     return (
