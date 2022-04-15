@@ -32,7 +32,7 @@ function Cart() {
                 }
 
                 {
-                    cart.length > 0 && <button className='btn btn-warning' onClick={emptyCart} >Vaciar Carrito</button>
+                    cart.length > 0 && <button className="btn btn-warning" onClick={emptyCart} >Vaciar Carrito</button>
                 }
             </div>
         </>

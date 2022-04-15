@@ -20,7 +20,7 @@ const MyProvider = ({ children }) => {
         };
 
         if (isInCart(newItem.id)) {
-            const productFind = cart.find(x => x.id === item.id)
+            const productFind = cart.find(x => x.id === newItem.id)
             const productIndex = cart.indexOf(productFind)
             const auxArray = [...cart]
             auxArray[productIndex].qty += qty

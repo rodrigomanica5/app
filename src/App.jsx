@@ -1,8 +1,8 @@
-import ItemListContainer from "./components/ItemListContainer";
+import ItemListContainer from "./containers/ItemListContainer";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./components/Cart";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemDetailContainer from "./containers/ItemDetailContainer";
 import NavBar from "./components/NavBar";
 import MyProvider from './context/CartContext'
 

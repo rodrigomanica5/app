@@ -4,8 +4,6 @@ import { CartContext } from '../context/CartContext'
 
 function ItemCount({ stock, quantity, setQuantity, onAdd, checkout }) {
 
-    const {emptyCart} = useContext(CartContext)
-
     const handleAdd = () => {
         if (quantity < stock) {
             setQuantity(quantity + 1)
