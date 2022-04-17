@@ -8,7 +8,7 @@ const MyProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
 
-    const isInCart = (id) => { 
+    const isInCart = (id) => {
         return cart.some(x => x.id === id)
     }
 
@@ -30,7 +30,7 @@ const MyProvider = ({ children }) => {
         }
     }
 
-    const deleteItem = (id) => {  
+    const deleteItem = (id) => {
         setCart(cart.filter(x => x.id !== id))
     }
 
@@ -39,11 +39,15 @@ const MyProvider = ({ children }) => {
     }
 
     const getItemQty = () => {
-        console.log("devuelve cantidad de cart")
+        return cart.reduce((acc, x) => acc += x.qty, 0)
+    }
+
+    const getItemPrice = () => {
+        return cart.reduce((acc, x) => acc += x.price * x.qty, 0)
     }
 
     return (
-        <Provider value={{ cart, addItem, isInCart, deleteItem, emptyCart, getItemQty }}>{children}</Provider>
+        <Provider value={{ cart, addItem, isInCart, deleteItem, emptyCart, getItemQty, getItemPrice }}>{children}</Provider>
     )
 }
 

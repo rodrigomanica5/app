@@ -20,7 +20,7 @@ function ItemDetailContainer() {
                     setDetail(productDetail.find(x => x.id == productId))
                 }
             })
-            .catch(error => {console.log("Error al cargar el detalle del producto")})
+            .catch(error => { console.log("Error al cargar el detalle del producto") })
 
     }, [])
 

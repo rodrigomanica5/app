@@ -4,18 +4,26 @@ import { Link } from 'react-router-dom'
 
 function Cart() {
 
-    const { cart, emptyCart, deleteItem } = useContext(CartContext)
+    const { cart, emptyCart, deleteItem, getItemPrice } = useContext(CartContext)
 
     return (
         <>
             <h1>Soy tu cart favorito</h1>
+
+            {
+                cart.length > 0 &&
+                <div>
+                    <h2>Precio Total: ARS {getItemPrice()} </h2>
+                </div>
+            }
+
             <div>
                 {
                     cart.length > 0
                         ? cart.map((element, index) => {
                             return <div key={index}>
                                 <div key={index}>
-                                    <img src={element.pictureURL} width="120px" height="120px"></img>
+                                    <img src={element.pictureURL} width="120px" height="120px" alt={element.name}></img>
                                     <div>
                                         <h4>{element.name}</h4>
                                         <h4>Precio: {element.price}</h4>

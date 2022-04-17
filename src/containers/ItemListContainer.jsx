@@ -12,7 +12,7 @@ function ItemListContainer() {
     useEffect(() => {
 
         const promise = fetch("https://mocki.io/v1/db8f8697-04d8-4279-818a-001ead101779");
-        
+
         promise.then(data => data.json())
             .then(listaProductos => {
 
@@ -21,23 +21,23 @@ function ItemListContainer() {
                 } else if ((collectionName === "alemania") || (collectionName === "belgica")) {
                     setCervezas(listaProductos.filter(x => x.origin === collectionName))
                 } else if (
-                    (collectionName === "weissbier") || 
-                    (collectionName === "witbier") || 
-                    (collectionName === "belgian-ale") || 
-                    (collectionName === "abbey-dubbel") || 
-                    (collectionName === "belgian-strong-ale") || 
-                    (collectionName === "abbey-tripel") || 
-                    (collectionName === "helles") || 
-                    (collectionName === "pils") || 
-                    (collectionName === "imperial-stout") || 
-                    (collectionName === "sour-red") || 
-                    (collectionName === "oktoberfest") ) {
+                    (collectionName === "weissbier") ||
+                    (collectionName === "witbier") ||
+                    (collectionName === "belgian-ale") ||
+                    (collectionName === "abbey-dubbel") ||
+                    (collectionName === "belgian-strong-ale") ||
+                    (collectionName === "abbey-tripel") ||
+                    (collectionName === "helles") ||
+                    (collectionName === "pils") ||
+                    (collectionName === "imperial-stout") ||
+                    (collectionName === "sour-red") ||
+                    (collectionName === "oktoberfest")) {
                     setCervezas(listaProductos.filter(x => x.type === collectionName))
                 } else {
                     setCervezas(listaProductos.filter(x => x.name.includes(collectionName)))
                 }
             })
-            .catch(error => {console.log("Error al cargar los productos")})
+            .catch(error => { console.log("Error al cargar los productos") })
 
     }, [collectionName])
 

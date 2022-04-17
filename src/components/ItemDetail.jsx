@@ -7,7 +7,7 @@ function ItemDetail({ beerDetail }) {
     const [quantity, setQuantity] = useState(1)
     const [checkout, setCheckout] = useState(false)
 
-    const {addItem, isInCart} = useContext(CartContext)
+    const { addItem, isInCart } = useContext(CartContext)
 
     const onAdd = () => {
 
