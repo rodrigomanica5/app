@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import CartWidget from './CartWidget';
 
 const tabs = [{ tag: "origen" }, { tag: "estilos" }, { tag: "marcas" }];
@@ -81,7 +81,7 @@ const marcas = [
     },
     {
         brand: "Triple Karmeliet",
-        url: "/collections/karmeliet"
+        url: "/collections/triple-karmeliet"
     },
     {
         brand: "Augustiner",
@@ -118,13 +118,13 @@ function NavBar() {
                             return <li key={index} className="nav-item dropdown"> <p className="categories m-0 nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> {element.tag} </p>
 
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    {(element.tag == "origen") ? origen.map((element, index) => {
+                                    {(element.tag === "origen") ? origen.map((element, index) => {
                                         return <li key={index}><Link className="dropdown-item" to={element.url}>{element.country}</Link></li>
                                     })
-                                        : (element.tag == "estilos") ? estilos.map((element, index) => {
+                                        : (element.tag === "estilos") ? estilos.map((element, index) => {
                                             return <li key={index}><Link className="dropdown-item" to={element.url}>{element.style}</Link></li>
                                         })
-                                            : (element.tag == "marcas") ? marcas.map((element, index) => {
+                                            : (element.tag === "marcas") ? marcas.map((element, index) => {
                                                 return <li key={index}><Link className="dropdown-item" to={element.url}>{element.brand}</Link></li>
                                             })
                                                 : console.log("no")}

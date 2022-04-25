@@ -27,9 +27,7 @@ function ItemDetail({ beerDetail }) {
                     <h5>{beerDetail.type} | {beerDetail.origin} </h5>
                     <h5>ABV: {beerDetail.abv} </h5>
                     <h3 className='mt-4'>$ {beerDetail.price} </h3>
-                    {(beerDetail.description)
-                        ? <p className='mt-4'> {beerDetail.description} </p>
-                        : console.log("No hay descripción")}
+                    {beerDetail.description && <p className='mt-4'> {beerDetail.description} </p>}
 
                     <ItemCount stock={beerDetail.stock} quantity={quantity} setQuantity={setQuantity} onAdd={onAdd} checkout={checkout} />
                 </div>

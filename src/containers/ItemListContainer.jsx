@@ -2,6 +2,8 @@ import ItemList from '../components/ItemList';
 import { useState, useEffect } from 'react'
 import { BounceLoader } from 'react-spinners';
 import { useParams } from 'react-router-dom'
+import { db } from '../firebase/firebase'
+import { getDocs, collection, query, where } from 'firebase/firestore'
 
 function ItemListContainer() {
 
@@ -11,33 +13,49 @@ function ItemListContainer() {
 
     useEffect(() => {
 
-        const promise = fetch("https://mocki.io/v1/db8f8697-04d8-4279-818a-001ead101779");
+        const productsCollection = collection(db, "ItemCollection")
 
-        promise.then(data => data.json())
-            .then(listaProductos => {
+        console.log(collectionName);
 
-                if (!collectionName) {
-                    setCervezas(listaProductos)
-                } else if ((collectionName === "alemania") || (collectionName === "belgica")) {
-                    setCervezas(listaProductos.filter(x => x.origin === collectionName))
-                } else if (
-                    (collectionName === "weissbier") ||
-                    (collectionName === "witbier") ||
-                    (collectionName === "belgian-ale") ||
-                    (collectionName === "abbey-dubbel") ||
-                    (collectionName === "belgian-strong-ale") ||
-                    (collectionName === "abbey-tripel") ||
-                    (collectionName === "helles") ||
-                    (collectionName === "pils") ||
-                    (collectionName === "imperial-stout") ||
-                    (collectionName === "sour-red") ||
-                    (collectionName === "oktoberfest")) {
-                    setCervezas(listaProductos.filter(x => x.type === collectionName))
-                } else {
-                    setCervezas(listaProductos.filter(x => x.name.includes(collectionName)))
-                }
+        const filter = () => {
+
+            if (!collectionName) {
+                return productsCollection
+            } else if ((collectionName === "alemania") || (collectionName === "belgica")) {
+                return query(productsCollection, where("categoryOrigin", "==", `${collectionName}`))
+            } else if (
+                (collectionName === "weissbier") ||
+                (collectionName === "witbier") ||
+                (collectionName === "belgian-ale") ||
+                (collectionName === "abbey-dubbel") ||
+                (collectionName === "belgian-strong-ale") ||
+                (collectionName === "abbey-tripel") ||
+                (collectionName === "helles") ||
+                (collectionName === "pils") ||
+                (collectionName === "imperial-stout") ||
+                (collectionName === "sour-red") ||
+                (collectionName === "oktoberfest")) {
+                return query(productsCollection, where("categoryType", "==", `${collectionName}`))
+            } else {
+                return query(productsCollection, where("categoryBrand", "==", `${collectionName}`))
+            }
+        }
+
+        getDocs(filter())
+            .then((result) => {
+                const docs = result.docs;
+                const productsList = docs.map((element) => {
+                    const product = {
+                        id: element.id,
+                        ...element.data()
+                    }
+                    return product;
+                })
+                setCervezas(productsList)
             })
-            .catch(error => { console.log("Error al cargar los productos") })
+            .catch(() => {
+                console.log("Error al cargar los productos.")
+            })
 
     }, [collectionName])
 
