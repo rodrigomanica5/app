@@ -1,11 +1,36 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { db } from '../firebase/firebase'
+import CheckoutForm from './CheckoutForm'
 
 function Cart() {
 
     const { cart, emptyCart, deleteItem, getItemPrice } = useContext(CartContext)
 
+    const { orderId, setOrderId } = useState([])
+
+
+    useEffect(() => {
+
+        const finalizarCompra = () => {
+            const orderCollection = collection(db, "Orders")
+            addDoc(orderCollection, {
+                buyer: "",
+                items: cart,
+                total: getItemPrice(),
+                date: serverTimestamp()
+            })
+                .then((result) => {
+                    setOrderId(result.id)
+                })
+
+                emptyCart()
+        }
+    }, [])
+
+    
     return (
         <>
             <h1>Soy tu cart favorito</h1>
@@ -40,7 +65,11 @@ function Cart() {
                 }
 
                 {
-                    cart.length > 0 && <button className="btn btn-warning" onClick={emptyCart} >Vaciar Carrito</button>
+                    cart.length > 0 &&
+                    <>
+                        <button className="btn btn-warning" onClick={emptyCart} >Vaciar Carrito</button>
+                        {/* <button className="btn btn-success" onClick={checkout}>Checkout</button> */}
+                    </>
                 }
             </div>
         </>
