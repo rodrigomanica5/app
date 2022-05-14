@@ -104,15 +104,14 @@ const marcas = [
 function NavBar() {
 
     return (
-        <>
-            <nav className="navbar navbar-expand-lg">
-                <div className="container-fluid">
-                    <Link className='col-xl-4' to="/"><img className='logoNav' src='/img/brewsy.png' alt='Logo de Brewsy'></img></Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="col-xl-8 collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="col-xl-6 d-flex align-items-center justify-content-evenly p-0 navbar-nav me-auto mb-2 mb-lg-0">
+        <nav className="navbar navbar-expand-lg sticky-top">
+            <div className="container-fluid px-5">
+                <Link to="/"><img className='logoNav' src='/img/brewsy.svg' alt='Logo de Brewsy' height="60px" width="150px"></img></Link>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="col-xl-8 d-flex justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="col-xl-6 d-flex align-items-center justify-content-evenly p-0 navbar-nav mb-2 mb-lg-0">
 
                         {tabs.map((element, index) => {
                             return <li key={index} className="nav-item dropdown"> <p className="categories m-0 nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> {element.tag} </p>
@@ -131,18 +130,16 @@ function NavBar() {
                                 </ul>
                             </li>
                         })}
-                        </ul>
+                    </ul>
 
-                        <Link className='col-xl-3 d-flex justify-content-center' to="/cart"> <CartWidget /> </Link>
+                    <Link className='col-xl-1 d-flex justify-content-center' to="/cart"> <CartWidget /> </Link>
 
-                        <form className="col-xl-3 d-flex">
-                            <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            {/* <button class="btn btn-outline-success" type="submit">Search</button> */}
-                        </form>
-                    </div>
+                    <form className="col-xl-3 d-flex">
+                        <input className="form-control me-2" type="search" placeholder="Busca tu cerveza..." aria-label="Search" disabled />
+                    </form>
                 </div>
-            </nav>
-        </>
+            </div>
+        </nav>
     )
 };
 

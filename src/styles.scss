@@ -3,10 +3,21 @@
     src: url(/public/fonts/HelveticaNowDisplay-ExtraBold.ttf);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+footer {
+    height: 30vh;
+    background-color: #41416C;
 }
 
 .row {
@@ -19,75 +30,24 @@
     margin: 0;
 }
 
-a { 
+a {
     color: white;
 }
 
 a:hover {
     text-decoration: none;
-    color: white;
 }
-
-// header {
-//     width: 100%;
-//     height: 75px;
-//     // background-color: #EFEFEF;
-//     background-color: #444444;
-//     // background-color: black;
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
 
 .navbar {
     height: 75px;
-    background-color: #444444;
+    background-color: #57eab8;
+    box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, .5);
 }
-
-.logoNav {
-    width: 25%;
-
-    img {
-        margin-left: 15px;
-        height: 60px;
-    }
-}
-
-// .pestañas {
-//     text-transform: uppercase;
-//     text-decoration: none;
-//     // height: 75px;
-//     // color: #2e2c4b;
-//     // color: rgba(0,0,0,.5);
-//     color: white;
-//     font-family: HelveticaNow;
-
-//     p:hover {
-//         opacity: 0.7;
-//         transition: opacity 0.3s;
-//         cursor: pointer;
-//     }
-// }
-
-// .pestañas:hover {
-//     color: #FFFFFF;
-// }
 
 .active {
     color: #444444;
     background-color: #FFFFFF;
 }
-
-// .menu-area {
-//     position: static;
-// }
-
-// .mega-area {
-//     position: absolute;
-//     width: 100%;
-//     left: 0;
-//     right: 0;
-//     transition: all 0.5s;
-// }
 
 .dropdown:hover .dropdown-menu {
     display: block;
@@ -97,81 +57,26 @@ a:hover {
 }
 
 .categories {
-        color: white;
-        text-transform: uppercase;
-        font-family: HelveticaNow;
+    color: #2E2E4A;
+    text-transform: uppercase;
+    font-family: HelveticaNow;
 }
 
 .categories:hover {
-    color: #C7C7C7;
+    color: white;
 }
-
-// .divLinks {
-//     height: 200px;
-//     display: flex;
-//     flex-direction: column;
-//     flex-wrap: wrap;
-
-//     ul li {
-//         list-style: none;
-
-//         a {
-//             text-decoration: none;
-//             font-family: HelveticaNow;
-//             color: #000;
-//             text-transform: uppercase;
-//         }
-
-//         a:hover {
-//             text-decoration: underline;
-//             opacity: 0.8;
-//             transition: all 0.3s;
-//         }
-//     }
-// }
 
 .buscador {
     background-color: #696969;
     border: none;
-    font-family: HelveticaNow;
-    text-transform: uppercase;
 }
 
 .buscador:focus {
     background-color: #696969;
 }
 
-// nav {
-//     width: 75%;
-//     display: flex;
-//     flex-direction: row;
-
-//     .tabs {
-//         width: 65%;
-//         display: flex;
-//         justify-content: space-evenly;
-
-//         a {
-//             text-transform: uppercase;
-//             text-decoration: none;
-//             // color: #2e2c4b;
-//             // color: rgba(0,0,0,.5);
-//             color: white;
-//             font-family: HelveticaNow;
-//         }
-//     }
-
-//     .cartWidget {
-//         width: 35%;
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: flex-end;
-//         padding-right: 70px;
-//     }
-// }
-// }
-
 .itemListContainer {
+    background-color: #F0F0F0;
     width: 100%;
     height: auto;
 
@@ -186,53 +91,74 @@ a:hover {
 
     .hero {
         width: 100%;
-        height: 400px;
-    }
-
-    .loading {
-        margin-top: 30vh;
+        height: auto;
     }
 }
 
-.detailSection {
-    border: 1px solid #e7e9ee;
+.loading {
+    margin-top: 30vh;
+}
+
+.itemCard {
+    background-color: #FFFFFF;
     border-radius: 10px;
-    box-shadow: 2px 5px 5px 5px #e7e9ee;
+    font-family: HelveticaNow;
 }
 
-// .card {
-// width: 50%;
-// margin-right: auto;
-// margin-left: auto;
-// margin-top: 50px;
-// padding: 50px 0px;
-// display: flex;
-// flex-direction: row;
-// border: 1px solid #e7e9ee;
-// border-radius: 10px;
-// box-shadow: 2px 5px 5px 5px #e7e9ee;
+.itemCard:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
 
-// .detailCard {
-//     h3 {
-//         margin-top: 30px;
-//     }
+.btnComprar {
+    background-color: #4C23E1;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+}
 
-//     .controls {
-//         width: 200px;
-//         margin-top: 30px;
-//         display: flex;
-//         flex-direction: row;
-//         justify-content: space-between;
+.btnRemove {
+    height: 50px;
+    width: 50px;
+}
 
-//         button {
-//             width: 30px;
-//         }
-//     }
+.btnControl {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+}
 
-//     .checkout {
-//         margin-top: 20px;
-//         width: 200px;
-//         height: 30px;
-//     }
-// }
-// }
+.btnComprar:hover {
+    background-color: #57eab8;
+    color: white;
+}
+
+.cartView {
+    background-color: #F0F0F0;
+    min-height: 90vh;
+    height: auto;
+}
+
+.emptyCartAlert {
+
+    margin-top: 30vh;
+
+    h3 {
+        font-size: 60px;
+    }
+}
+
+.cartItemCard {
+    @extend .itemCard;
+}
+
+.cartItemCard:hover {
+    transform: scale(1.01);
+    transition: all 0.3s;
+}
+
+.gg-remove {
+    width: 40px;
+    height: 40px;
+    color: #d93444;
+    cursor: pointer;
+}

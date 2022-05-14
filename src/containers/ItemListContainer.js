@@ -15,8 +15,6 @@ function ItemListContainer() {
 
         const productsCollection = collection(db, "ItemCollection")
 
-        console.log(collectionName);
-
         const filter = () => {
 
             if (!collectionName) {
@@ -60,15 +58,13 @@ function ItemListContainer() {
     }, [collectionName])
 
     return (
-        <>
-            <section className='itemListContainer'>
-                <img className='hero' src='/img/hero.jpg' alt='Bienvenido a Brewsy'></img>
+        <section className='itemListContainer'>
+            <img className='hero' src='/img/hero.jpg' alt='Bienvenido a Brewsy'></img>
 
-                {(cervezas.length < 1)
-                    ? <div className='loading col-1 mx-auto'> <BounceLoader /> </div>
-                    : <ItemList arrayCervezas={cervezas} />}
-            </section>
-        </>
+            {(cervezas.length < 1)
+                ? <div className='loading col-1 mx-auto'> <BounceLoader /> </div>
+                : <ItemList arrayCervezas={cervezas} />}
+        </section>
     )
 }
 

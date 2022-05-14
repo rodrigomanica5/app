@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap");
 @font-face {
   font-family: HelveticaNow;
   src: url(/public/fonts/HelveticaNowDisplay-ExtraBold.ttf);
@@ -8,6 +9,15 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+footer {
+  height: 30vh;
+  background-color: #41416C;
 }
 
 .row {
@@ -26,21 +36,13 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: white;
 }
 
 .navbar {
   height: 75px;
-  background-color: #444444;
-}
-
-.logoNav {
-  width: 25%;
-}
-
-.logoNav img {
-  margin-left: 15px;
-  height: 60px;
+  background-color: #57eab8;
+  -webkit-box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
 }
 
 .active {
@@ -56,20 +58,18 @@ a:hover {
 }
 
 .categories {
-  color: white;
+  color: #2E2E4A;
   text-transform: uppercase;
   font-family: HelveticaNow;
 }
 
 .categories:hover {
-  color: #C7C7C7;
+  color: white;
 }
 
 .buscador {
   background-color: #696969;
   border: none;
-  font-family: HelveticaNow;
-  text-transform: uppercase;
 }
 
 .buscador:focus {
@@ -77,6 +77,7 @@ a:hover {
 }
 
 .itemListContainer {
+  background-color: #F0F0F0;
   width: 100%;
   height: auto;
 }
@@ -92,17 +93,73 @@ a:hover {
 
 .itemListContainer .hero {
   width: 100%;
-  height: 400px;
+  height: auto;
 }
 
-.itemListContainer .loading {
+.loading {
   margin-top: 30vh;
 }
 
-.detailSection {
-  border: 1px solid #e7e9ee;
+.itemCard, .cartItemCard {
+  background-color: #FFFFFF;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 5px 5px 5px #e7e9ee;
-          box-shadow: 2px 5px 5px 5px #e7e9ee;
+  font-family: HelveticaNow;
+}
+
+.itemCard:hover, .cartItemCard:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.btnComprar {
+  background-color: #4C23E1;
+  color: white;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.btnRemove {
+  height: 50px;
+  width: 50px;
+}
+
+.btnControl {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+}
+
+.btnComprar:hover {
+  background-color: #57eab8;
+  color: white;
+}
+
+.cartView {
+  background-color: #F0F0F0;
+  min-height: 90vh;
+  height: auto;
+}
+
+.emptyCartAlert {
+  margin-top: 30vh;
+}
+
+.emptyCartAlert h3 {
+  font-size: 60px;
+}
+
+.cartItemCard:hover {
+  -webkit-transform: scale(1.01);
+          transform: scale(1.01);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.gg-remove {
+  width: 40px;
+  height: 40px;
+  color: #d93444;
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */

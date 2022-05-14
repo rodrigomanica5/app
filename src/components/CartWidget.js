@@ -9,15 +9,13 @@ function CartWidget() {
     const { getItemQty } = useContext(CartContext)
 
     return (
-        <>
-            <div className='cartWidget'>
-                <IconButton style={{ color: 'white' }}>
-                    <Badge badgeContent={getItemQty()} color="success">
-                        <ShoppingCart></ShoppingCart>
-                    </Badge>
-                </IconButton>
-            </div>
-        </>
+        <div className='cartWidget'>
+            <IconButton style={{ color: 'white' }}>
+                <Badge badgeContent={getItemQty()} color="success">
+                    <ShoppingCart></ShoppingCart>
+                </Badge>
+            </IconButton>
+        </div>
     )
 }
 
