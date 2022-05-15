@@ -24,6 +24,9 @@ function ItemDetailContainer() {
                 }
                 setDetail(productDetail)
             })
+            .catch(() => {
+                console.log("Error al cargar el detalle.")
+            })
 
     }, [])
 

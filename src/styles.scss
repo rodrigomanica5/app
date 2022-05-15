@@ -173,11 +173,19 @@ a:hover {
 
 @media only screen and (max-width: 576px) {
 
+    #navbarNavDropdown {
+        background-color: white;
+    }
+
     .itemCardM {
         border-radius: 0px;
         border-top: 0.20px solid #e7e9ee;
         border-bottom: 0.20px solid #e7e9ee;
         border-right: 0.5px solid #e7e9ee;
+    }
+
+    .itemCardM:hover {
+        transform: none;
     }
 
     .imgDetail {
@@ -186,5 +194,13 @@ a:hover {
 
     .checkoutTitleM {
         text-align: center;
+    }
+
+    .cartItemCard:hover {
+        transform: none;
+    }
+
+    .categories:hover {
+        color: black;
     }
 }

@@ -104,14 +104,14 @@ const marcas = [
 function NavBar() {
 
     return (
-        <nav className="navbar navbar-expand-lg sticky-top">
-            <div className="container-fluid px-5">
+        <nav className="navbar navbar-expand-lg navbar-light sticky-top">
+            <div className="container-fluid d-flex justify-content-around px-0 px-xl-5">
                 <Link to="/"><img className='logoNav' src='/img/brewsy.svg' alt='Logo de Brewsy' height="60px" width="150px"></img></Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="col-xl-8 d-flex justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="col-xl-6 d-flex align-items-center justify-content-evenly p-0 navbar-nav mb-2 mb-lg-0">
+                <div className="row col-xl-8 d-xl-flex justify-content-evenly justify-content-xl-end collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul className="col-9 col-xl-6 d-flex align-items-start align-items-xl-center justify-content-evenly p-0 navbar-nav mb-2 mb-lg-0">
 
                         {tabs.map((element, index) => {
                             return <li key={index} className="nav-item dropdown"> <p className="categories m-0 nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"> {element.tag} </p>
@@ -126,15 +126,15 @@ function NavBar() {
                                             : (element.tag === "marcas") ? marcas.map((element, index) => {
                                                 return <li key={index}><Link className="dropdown-item" to={element.url}>{element.brand}</Link></li>
                                             })
-                                                : console.log("no")}
+                                                : ""}
                                 </ul>
                             </li>
                         })}
                     </ul>
 
-                    <Link className='col-xl-1 d-flex justify-content-center' to="/cart"> <CartWidget /> </Link>
+                    <Link className='col-2 col-xl-1 d-flex justify-content-center align-self-start mt-2 mt-xl-0' to="/cart"> <CartWidget /> </Link>
 
-                    <form className="col-xl-3 d-flex">
+                    <form className="col-8 col-xl-3 d-flex">
                         <input className="form-control me-2" type="search" placeholder="Busca tu cerveza..." aria-label="Search" disabled />
                     </form>
                 </div>

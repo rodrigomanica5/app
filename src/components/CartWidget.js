@@ -10,7 +10,7 @@ function CartWidget() {
 
     return (
         <div className='cartWidget'>
-            <IconButton style={{ color: 'white' }}>
+            <IconButton style={{ color: '#41416C' }} >
                 <Badge badgeContent={getItemQty()} color="success">
                     <ShoppingCart></ShoppingCart>
                 </Badge>
