@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Link } from 'react-router-dom'
 import { CgRemove } from 'react-icons/cg'
@@ -7,6 +7,22 @@ import CheckoutForm from './CheckoutForm'
 function Cart() {
 
     const { cart, emptyCart, deleteItem, getItemPrice } = useContext(CartContext)
+
+    const [orderId, setOrderId] = useState(null)
+
+    if ((cart.length === 0) && (orderId)) {
+        return <div className='successNotification'>
+            <div className='mx-auto my-auto col-xl-8 text-center'>
+                <h2>Tu compra fue registrada con éxito.</h2>
+                <hr className='mb-5' />
+                <h4 className=''>Conserva tu número de orden para visualizar el estado de tu compra.</h4>
+                <h4 className='mt-4'>Número de Orden:</h4>
+                <h3>{orderId}</h3>
+                <hr className='mt-5 mb-4' />
+                <Link to="/" className="btn btnComprar col-xl-4 py-3">Volver al catálogo</Link>
+            </div>
+        </div>
+    }
 
     return (
         <div className='cartView row'>
@@ -38,7 +54,7 @@ function Cart() {
                     cart.length > 0 &&
                     <div className='col-xl-10 mx-auto'>
                         <button className="btn btn-warning mx-auto" onClick={emptyCart} >Vaciar Carrito</button>
-                        <hr/>
+                        <hr />
                         <h2 className='mt-4'>TOTAL: ${getItemPrice()}</h2>
                     </div>
                 }
@@ -46,7 +62,7 @@ function Cart() {
             {
                 cart.length > 0 &&
                 <div className='col-xl-5 pt-4'>
-                    <CheckoutForm />
+                    <CheckoutForm orderId={orderId} setOrderId={setOrderId} />
                 </div>
             }
         </div>

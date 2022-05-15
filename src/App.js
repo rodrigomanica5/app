@@ -5,7 +5,6 @@ import Cart from "./components/Cart";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 import NavBar from "./components/NavBar";
 import MyProvider from './context/CartContext'
-import CheckoutForm from "./components/CheckoutForm";
 
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
                     <Route path="/collections/:collectionName" element={<ItemListContainer />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/product/:productId" element={<ItemDetailContainer />} />
-                    <Route path="/checkout" element={<CheckoutForm />} />
                 </Routes>
                 <Footer />
             </MyProvider>

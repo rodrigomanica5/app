@@ -3,13 +3,10 @@ import { CartContext } from '../context/CartContext'
 import { useState } from 'react'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
 import { db } from '../firebase/firebase'
-import { Navigate, Link } from 'react-router-dom'
 
-function CheckoutForm() {
+function CheckoutForm({setOrderId}) {
 
     const { cart, getItemPrice, emptyCart } = useContext(CartContext)
-
-    const [orderId, setOrderId] = useState(null)
 
     const [costumer, setCostumer] = useState({
         name: '',
@@ -46,29 +43,10 @@ function CheckoutForm() {
         })
     }
 
-    if (orderId) {
-        return <>
-
-            <div className='mx-auto col-xl-8 text-center'>
-                <h2>Tu orden fue registrada con éxito.</h2>
-                <hr />
-                <h4>Conserva tu número de orden para poder visualizar el estado de tu compra.</h4>
-                <h4>Número de Orden:</h4>
-                <h3>{orderId}</h3>
-                <hr />
-                <Link to="/" className="btn btn-success">Volver al Inicio</Link>
-            </div>
-        </>
-    }
-
-    if (cart.length === 0) {
-        return <Navigate to="/" />
-    }
-
     return (
         <div className='row col-xl-12 mx-auto mt-3'>
 
-            <h2>Checkout</h2>
+            <h2 className='checkoutTitleM'>Checkout</h2>
             <hr />
 
             <form onSubmit={handlerSubmit} className='d-flex flex-column align-content-center mx-auto'>
@@ -77,7 +55,7 @@ function CheckoutForm() {
 
                     <h6 className='col-xl-12'>Datos personales</h6>
 
-                    <div className='d-flex flex-column col-xl-5 mt-3 mb-2'>
+                    <div className='d-flex col-10 col-xl-5 mt-3 mb-2'>
                         <input
                             type="text"
                             name="name"
@@ -88,7 +66,7 @@ function CheckoutForm() {
                         />
                     </div>
 
-                    <div className='d-flex flex-column col-xl-5 mt-3 mb-2'>
+                    <div className='d-flex col-10 col-xl-5 mt-3 mb-2'>
                         <input
                             type="text"
                             name="lastname"
@@ -99,7 +77,7 @@ function CheckoutForm() {
                         />
                     </div>
 
-                    <div className='d-flex flex-column col-xl-5 mt-3 mb-2'>
+                    <div className='d-flex col-10 col-xl-5 mt-3 mb-2'>
                         <input
                             type="email"
                             name="email"
@@ -110,7 +88,7 @@ function CheckoutForm() {
                         />
                     </div>
 
-                    <div className='d-flex flex-column col-xl-5 my-3'>
+                    <div className='d-flex col-10 col-xl-5 my-3'>
                         <input
                             type="text"
                             name="phone"
@@ -128,7 +106,7 @@ function CheckoutForm() {
 
                     <h6 className='col-xl-12'>Datos del medio de pago</h6>
 
-                    <div className='d-flex flex-column col-xl-5 my-3'>
+                    <div className='d-flex col-10 col-xl-5 my-3'>
                         <input
                             type="text"
                             name="cardName"
@@ -139,7 +117,7 @@ function CheckoutForm() {
                         />
                     </div>
 
-                    <div className='d-flex flex-column col-xl-5 my-3'>
+                    <div className='d-flex col-10 col-xl-5 my-3'>
                         <input
                             type="text"
                             name="cardNumber"
@@ -150,7 +128,7 @@ function CheckoutForm() {
                         />
                     </div>
 
-                    <div className='d-flex flex-column col-xl-5 my-3'>
+                    <div className='d-flex col-10 col-xl-5 my-3'>
                         <input
                             type="text"
                             name="cardOutdate"
@@ -161,7 +139,7 @@ function CheckoutForm() {
                         />
                     </div>
 
-                    <div className='d-flex flex-column col-xl-5 my-3'>
+                    <div className='d-flex col-10 col-xl-5 my-3'>
                         <input
                             type="password"
                             name="cardCvv"
@@ -173,7 +151,7 @@ function CheckoutForm() {
                     </div>
                 </div>
 
-                <button type='submit' className='btn btnComprar col-xl-10 mx-auto mt-4 py-3'>Finalizar compra</button>
+                <button type='submit' className='btn btnComprar col-10 col-xl-10 mx-auto mb-4 mt-3 mb-xl-0 mt-xl-4 py-3'>Finalizar compra</button>
             </form>
         </div>
     )

@@ -135,7 +135,7 @@ a:hover {
   color: white;
 }
 
-.cartView {
+.cartView, .successNotification {
   background-color: #F0F0F0;
   min-height: 90vh;
   height: auto;
@@ -147,6 +147,10 @@ a:hover {
 
 .emptyCartAlert h3 {
   font-size: 60px;
+}
+
+.successNotification div {
+  padding-top: 20vh;
 }
 
 .cartItemCard:hover {
@@ -161,5 +165,20 @@ a:hover {
   height: 40px;
   color: #d93444;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 576px) {
+  .itemCardM {
+    border-radius: 0px;
+    border-top: 0.20px solid #e7e9ee;
+    border-bottom: 0.20px solid #e7e9ee;
+    border-right: 0.5px solid #e7e9ee;
+  }
+  .imgDetail {
+    width: 50vh;
+  }
+  .checkoutTitleM {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

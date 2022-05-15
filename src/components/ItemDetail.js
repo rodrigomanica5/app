@@ -19,7 +19,7 @@ function ItemDetail({ beerDetail }) {
     return (
         <div className='detailSection row col-xl-9 mx-auto my-5 py-3'>
             <div className='col-xl-6'>
-                <img src={beerDetail.pictureURL} alt={beerDetail.name} ></img>
+                <img src={beerDetail.pictureURL} alt={beerDetail.name} className="imgDetail" ></img>
             </div>
             <div className='col-xl-6 mt-5'>
                 <h3> {beerDetail.name} {beerDetail.size} </h3>
