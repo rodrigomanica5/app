@@ -5,7 +5,7 @@ function Item({ producto }) {
 
     return (
         <div className='itemCard itemCardM col-6 col-xl-2 mx-xl-1 my-xl-4 pt-4 pb-4 d-flex flex-column justify-content-between'>
-            <img className='col-xl-12 image-fluid' src={producto.pictureURL} alt={producto.name} ></img>
+            <img className='col-xl-12 img-fluid' src={producto.pictureURL} alt={producto.name} ></img>
             <h5 className='mt-3'> {producto.name}</h5>
             <h4>${producto.price}</h4>
             <h6> {producto.origin} | {producto.type} </h6>
